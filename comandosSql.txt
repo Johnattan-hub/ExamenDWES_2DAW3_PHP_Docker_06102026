@@ -1,1 +1,17 @@
-// Copia aquí todos los comandos que has usado para crear la base de datos.
+CREATE DATABASE CAE;
+
+USE CAE;
+
+CREATE TABLE solicitud (
+    id INT(3) NOT NULL AUTO_INCREMENT,
+    nombre varchar(30) NOT NULL,
+    apellidos varchar(50) NOT NULL,
+    dni VARCHAR(9),
+    f_nac DATE,
+    tlf INT(9),
+    email VARCHAR(100),
+    profesion INT(1),
+    jornadaParcial BOOLEAN,
+    idiomas INT(1),
+    PRIMARY KEY(id)
+) ENGINE=InnoDB; 

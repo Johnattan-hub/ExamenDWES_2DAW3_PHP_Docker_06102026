@@ -1,4 +1,29 @@
 // Responde a la pregunta sobre docker del enunciado
 
+- docker run: crea un contenedor nuevo a partir de una imagen y lo arranca.
+  Si la imagen no está en local, Docker la descarga antes (pull).
+
+- -d (--detach): ejecuta el contenedor en segundo plano y devuelve el ID
+  del contenedor, sin bloquear la terminal.
+
+- --name mi_web: asigna el nombre "mi_web" al contenedor, para referirse a él
+  (docker stop mi_web, docker logs mi_web...) en lugar de usar el ID o un
+  nombre aleatorio.
+
+- -p 8080:80 (--publish): crea una asignación entre el puerto 8080 de cualquier 
+dirección en el host de Docker y el puerto 80 del contenedor. Las conexiones 
+salientes del contenedor se enmascararán, utilizando la dirección IP del host de Docker.
+
+- nginx: es la imagen usada, el servidor web Nginx de Docker Hub. Como no lleva
+  etiqueta, usa la versión mas actualizada.
 
 // Bibiografía
+- docker container run:
+  https://docs.docker.com/reference/cli/docker/container/run/
+
+- Docker Docs, publicar puertos:
+  https://docs.docker.com/engine/network/port-publishing/
+
+- Docker Hub, imagen oficial de nginx:
+  https://hub.docker.com/_/nginx
+

@@ -1,5 +1,6 @@
 <html>
     <head>
+        <meta charset="UTF-8">
         <title>Examen de Desarrollo web en entorno servidor</title>
         <link rel="stylesheet" type="text/css" href="../estilos/estilos.css">
         <link rel="icon" type="image/png" sizes="32x32" href="../imagenes/favicon.jpeg">
@@ -10,8 +11,43 @@
         <button onclick="location.href='../php/tabla.php?tipo=soldadura'">Soldadura</button>
         <button onclick="location.href='../php/tabla.php?tipo=informatica'">Informática</button>
         <button onclick="location.href='../php/tabla.php?tipo=socio'">Asistencia Sociosanitaria</button>
-        <form action="../php/tabla.php" method="???">
-            <!-- Añade aquí todos los datos que te pido en el enunciado -->
-        <form>
+        <form action="../php/tabla.php" method="post">
+            <label>Nombre:</label>
+            <input type="text" name="nombre" required>
+
+            <label>Apellidos:</label>
+            <input type="text" name="apellidos" required>
+
+            <label>DNI:</label>
+            <input type="text" name="dni" maxlength="9" required>
+
+            <label>Fecha de nacimiento:</label>
+            <input type="date" name="f_nac" required>
+
+            <label>Teléfono:</label>
+            <input type="text" name="tlf" maxlength="9" required>
+
+            <label>Email:</label>
+            <input type="email" name="email" required>
+
+            <label>Profesión estudiada:</label>
+            <select name="tipo" required>
+                <option value="soldadura">Soldadura</option>
+                <option value="informatica">Informática</option>
+                <option value="socio">Asistencia Sociosanitaria</option>
+            </select>
+
+            <!-- Radio: mismo name, solo se puede elegir una -->
+            <label>Jornada:</label>
+            <input type="radio" name="jornada" value="1" style="width:auto" required> Parcial
+            <input type="radio" name="jornada" value="0" style="width:auto"> Completa
+
+            
+            <label>Idiomas:</label>
+            <input type="checkbox" name="euskera" style="width:auto"> Euskera
+            <input type="checkbox" name="ingles" style="width:auto"> Inglés
+
+            <input type="submit" value="Enviar solicitud">
+        </form>
     </body>
 </html>
